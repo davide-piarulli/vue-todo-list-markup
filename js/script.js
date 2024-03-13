@@ -6,7 +6,7 @@ createApp ({
       todoList : [
         {
           text: 'Andare in spiaggia',
-          done: false
+          done: true
         },
         {
           text: 'Fare la spesa',
@@ -17,12 +17,16 @@ createApp ({
           done: false
         }
       ],
-      newTask: ''
+      newTask : {
+        newTask: '',
+        // newDone: false
+
+      }
     }
   },
   methods : {
     addTask(){
-
+      this.todoList.unshift(this.newTask)
     }
   }
 }).mount('#app')
