@@ -18,13 +18,15 @@ createApp ({
         }
       ],
       newTask : {
-        newTask: '',
+        text: '',
+        done: false
       }
     }
   },
   methods : {
     addTask(){
       this.todoList.unshift(this.newTask)
+      this.newTask=''
     },
     eliminaTask(indice){
       this.todoList.splice(indice,1)
