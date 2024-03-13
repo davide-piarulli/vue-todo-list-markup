@@ -43,14 +43,14 @@
     </div>
 
     <div class="task-container">
-      <ul>
+      <ul v-if="todoList.length > 0">
         <li v-for="(task, indice) in todoList">
           <span v-if="!task.done" >{{task.text}}</span>
           <span v-else :style="{'text-decoration': 'line-through'}">{{task.text}}</span>
           <i @click="eliminaTask(indice)" class="fa-solid fa-x"></i>
         </li>
       </ul>
-
+      <h3 v-else>Complimenti! Per oggi hai finito!</h3>
     </div>
 
 

@@ -1,9 +1,9 @@
-const {createApp} = Vue;
+const { createApp } = Vue;
 
-createApp ({
-  data(){
+createApp({
+  data() {
     return {
-      todoList : [
+      todoList: [
         {
           text: 'Andare in spiaggia',
           done: true
@@ -17,19 +17,22 @@ createApp ({
           done: false
         }
       ],
-      newTask : {
+      newTask: {
         text: '',
-        done: false
-      }
+        done: false,
+      },
+      errorMsg: '',
+      isError: false
     }
   },
-  methods : {
-    addTask(){
+  methods: {
+    addTask() {
+
       this.todoList.unshift(this.newTask)
-      this.newTask=''
+      this.newTask = ''
     },
-    eliminaTask(indice){
-      this.todoList.splice(indice,1)
+    eliminaTask(indice) {
+      this.todoList.splice(indice, 1)
     }
   }
 }).mount('#app')
